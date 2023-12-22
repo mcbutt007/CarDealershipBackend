@@ -1,20 +1,33 @@
 package qltt.CarDealership.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "XE")
 public class Xe {
 
     @Id
-    private String MaXe; // Primary Key
+    @Column(name = "MaXe", length = 10, nullable = false)
+    private String maXe;
 
-    private String LoaiXe;
-    private String Hang;
-    private double Gia;
-    private int SoLuong;
-    private String ThongSo;
+    @Column(name = "LoaiXe", length = 10, nullable = false)
+    private String loaiXe;
+
+    @Column(name = "Hang", length = 10, nullable = false)
+    private String hang;
+
+    @Column(name = "Gia", nullable = false)
+    private float gia;
+
+    @Column(name = "SoLuong", nullable = false)
+    private int soLuong;
+
+    @Column(name = "TenXe", length = 20, nullable = false)
+    private String tenXe;
+
+    @Column(name = "ThongSo", columnDefinition = "text")
+    private String thongSo;
 
     // Constructors, getters, and setters
 
@@ -22,63 +35,71 @@ public class Xe {
         // Default constructor
     }
 
-    public Xe(String maXe, String loaiXe, String hang, double gia, int soLuong, String thongSo) {
-        MaXe = maXe;
-        LoaiXe = loaiXe;
-        Hang = hang;
-        Gia = gia;
-        SoLuong = soLuong;
-        ThongSo = thongSo;
+    public Xe(String maXe, String loaiXe, String hang, float gia, int soLuong, String tenXe, String thongSo) {
+        this.maXe = maXe;
+        this.loaiXe = loaiXe;
+        this.hang = hang;
+        this.gia = gia;
+        this.soLuong = soLuong;
+        this.tenXe = tenXe;
+        this.thongSo = thongSo;
     }
 
     // Getters and setters
 
     public String getMaXe() {
-        return MaXe;
+        return maXe;
     }
 
     public void setMaXe(String maXe) {
-        MaXe = maXe;
+        this.maXe = maXe;
     }
 
     public String getLoaiXe() {
-        return LoaiXe;
+        return loaiXe;
     }
 
     public void setLoaiXe(String loaiXe) {
-        LoaiXe = loaiXe;
+        this.loaiXe = loaiXe;
     }
 
     public String getHang() {
-        return Hang;
+        return hang;
     }
 
     public void setHang(String hang) {
-        Hang = hang;
+        this.hang = hang;
     }
 
-    public double getGia() {
-        return Gia;
+    public float getGia() {
+        return gia;
     }
 
-    public void setGia(double gia) {
-        Gia = gia;
+    public void setGia(float gia) {
+        this.gia = gia;
     }
 
     public int getSoLuong() {
-        return SoLuong;
+        return soLuong;
     }
 
     public void setSoLuong(int soLuong) {
-        SoLuong = soLuong;
+        this.soLuong = soLuong;
+    }
+
+    public String getTenXe() {
+        return tenXe;
+    }
+
+    public void setTenXe(String tenXe) {
+        this.tenXe = tenXe;
     }
 
     public String getThongSo() {
-        return ThongSo;
+        return thongSo;
     }
 
     public void setThongSo(String thongSo) {
-        ThongSo = thongSo;
+        this.thongSo = thongSo;
     }
 }
-

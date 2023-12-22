@@ -1,16 +1,23 @@
 package qltt.CarDealership.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "NHACUNGCAP")
 public class NhaCungCap {
-    @Id
-    private String MaNCC; // Primary Key
 
-    private String TenNCC;
-    private String DiaChi;
-    private String SDT;
+    @Id
+    @Column(name = "MaNCC", length = 10, nullable = false)
+    private String maNCC;
+
+    @Column(name = "TenNCC", length = 10, nullable = false)
+    private String tenNCC;
+
+    @Column(name = "DiaChi", length = 40, nullable = false)
+    private String diaChi;
+
+    @Column(name = "SDT", length = 10, nullable = false)
+    private String sdt;
 
     // Constructors, getters, and setters
 
@@ -19,43 +26,44 @@ public class NhaCungCap {
     }
 
     public NhaCungCap(String maNCC, String tenNCC, String diaChi, String sdt) {
-        MaNCC = maNCC;
-        TenNCC = tenNCC;
-        DiaChi = diaChi;
-        SDT = sdt;
+        this.maNCC = maNCC;
+        this.tenNCC = tenNCC;
+        this.diaChi = diaChi;
+        this.sdt = sdt;
     }
 
     // Getters and setters
 
     public String getMaNCC() {
-        return MaNCC;
+        return maNCC;
     }
 
     public void setMaNCC(String maNCC) {
-        MaNCC = maNCC;
+        this.maNCC = maNCC;
     }
 
     public String getTenNCC() {
-        return TenNCC;
+        return tenNCC;
     }
 
     public void setTenNCC(String tenNCC) {
-        TenNCC = tenNCC;
+        this.tenNCC = tenNCC;
     }
 
     public String getDiaChi() {
-        return DiaChi;
+        return diaChi;
     }
 
     public void setDiaChi(String diaChi) {
-        DiaChi = diaChi;
+        this.diaChi = diaChi;
     }
 
-    public String getSDT() {
-        return SDT;
+    public String getSdt() {
+        return sdt;
     }
 
-    public void setSDT(String sDT) {
-        SDT = sDT;
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 }
+

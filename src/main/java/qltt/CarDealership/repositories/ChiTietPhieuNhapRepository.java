@@ -1,8 +1,9 @@
 package qltt.CarDealership.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import qltt.CarDealership.models.PhieuLap;
+import qltt.CarDealership.models.ChiTietPhieuNhap;
 
-public interface PhieuLapRepository extends JpaRepository<PhieuLap, String> {
+public interface ChiTietPhieuNhapRepository extends JpaRepository<ChiTietPhieuNhap, String> {
     // You can add custom queries if needed
 }
+

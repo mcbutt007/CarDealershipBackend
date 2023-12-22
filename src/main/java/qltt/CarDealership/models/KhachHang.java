@@ -1,19 +1,27 @@
 package qltt.CarDealership.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "KHACHHANG")
 public class KhachHang {
 
     @Id
-    private String MaKH; // Primary Key
+    @Column(name = "MaKH", length = 10, nullable = false)
+    private String maKH;
 
-    private String TenKhachHang;
-    private String SoDienThoai;
-    private String Email;
-    private String LoaiKhachHang;
+    @Column(name = "TenKH", length = 20)
+    private String tenKH;
+
+    @Column(name = "SDT", length = 10)
+    private String sdt;
+
+    @Column(name = "Email", length = 20)
+    private String email;
+
+    @Column(name = "LoaiKH", length = 10)
+    private String loaiKH;
 
     // Constructors, getters, and setters
 
@@ -21,54 +29,53 @@ public class KhachHang {
         // Default constructor
     }
 
-    public KhachHang(String maKH, String tenKhachHang, String soDienThoai, String email, String loaiKhachHang) {
-        MaKH = maKH;
-        TenKhachHang = tenKhachHang;
-        SoDienThoai = soDienThoai;
-        Email = email;
-        LoaiKhachHang = loaiKhachHang;
+    public KhachHang(String maKH, String tenKH, String sdt, String email, String loaiKH) {
+        this.maKH = maKH;
+        this.tenKH = tenKH;
+        this.sdt = sdt;
+        this.email = email;
+        this.loaiKH = loaiKH;
     }
 
     // Getters and setters
 
     public String getMaKH() {
-        return MaKH;
+        return maKH;
     }
 
     public void setMaKH(String maKH) {
-        MaKH = maKH;
+        this.maKH = maKH;
     }
 
-    public String getTenKhachHang() {
-        return TenKhachHang;
+    public String getTenKH() {
+        return tenKH;
     }
 
-    public void setTenKhachHang(String tenKhachHang) {
-        TenKhachHang = tenKhachHang;
+    public void setTenKH(String tenKH) {
+        this.tenKH = tenKH;
     }
 
-    public String getSoDienThoai() {
-        return SoDienThoai;
+    public String getSdt() {
+        return sdt;
     }
 
-    public void setSoDienThoai(String soDienThoai) {
-        SoDienThoai = soDienThoai;
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
-    public String getLoaiKhachHang() {
-        return LoaiKhachHang;
+    public String getLoaiKH() {
+        return loaiKH;
     }
 
-    public void setLoaiKhachHang(String loaiKhachHang) {
-        LoaiKhachHang = loaiKhachHang;
+    public void setLoaiKH(String loaiKH) {
+        this.loaiKH = loaiKH;
     }
 }
-
